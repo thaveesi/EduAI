@@ -1,0 +1,2 @@
+# EduAI
+fun little project
