@@ -1,7 +1,9 @@
 package com.example.EduAI.controller;
 import com.example.EduAI.dto.UserDto;
+import com.example.EduAI.dto.UserRegistrationDto;
 import com.example.EduAI.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,18 +13,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @PostMapping("/register")
-    public UserDto registerUser(@RequestBody UserDto userDto) {
-        // Add logic for user registration
-        UserDto dto = new UserDto();
-        return dto;
+    public UserDto registerUser(@RequestBody UserRegistrationDto userRegistrationDto) {
+        return userService.registerUser(userRegistrationDto);
     }
 
     @GetMapping("/{username}")
-    public UserDto findByUsername(@PathVariable String username) {
-        // Add logic for finding user by username
-        UserDto dto = new UserDto();
-        return dto;
+    public ResponseEntity<UserDto> findByUsername(@PathVariable String username) {
+        UserDto foundUser = userService.findByUsername(username);
+        return ResponseEntity.ok(foundUser);
     }
 
     // Add other necessary endpoints for user management

@@ -1,18 +1,18 @@
 package com.example.EduAI.dto;
-import lombok.*;
 
+
+import lombok.*;
 
 @Data
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
-
-    private Long id;
-
+public class UserRegistrationDto {
     private String username;
-
     private String email;
+    private String password;
+
+    // Add getters and setters
 
 }
