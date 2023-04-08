@@ -14,30 +14,30 @@ public class TopicController {
 
     @Autowired
     private TopicService topicService;
-
-    @PostMapping
-    public ResponseEntity<TopicDto> createTopic(@RequestBody TopicDto topicDto) {
-        // Add logic for creating a topic
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<TopicDto> updateTopic(@PathVariable Long id, @RequestBody TopicDto topicDto) {
-        // Add logic for updating a topic
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTopic(@PathVariable Long id) {
-        // Add logic for deleting a topic
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<TopicDto> getTopic(@PathVariable Long id) {
-        // Add logic for retrieving a topic
-    }
-
-    @GetMapping
-    public ResponseEntity<List<TopicDto>> getAllTopics() {
-        // Add logic for retrieving all topics
-    }
+//
+//    @PostMapping
+//    public ResponseEntity<TopicDto> createTopic(@RequestBody TopicDto topicDto) {
+//        // Add logic for creating a topic
+//    }
+//
+//    @PutMapping("/{id}")
+//    public ResponseEntity<TopicDto> updateTopic(@PathVariable Long id, @RequestBody TopicDto topicDto) {
+//        // Add logic for updating a topic
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteTopic(@PathVariable Long id) {
+//        // Add logic for deleting a topic
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<TopicDto> getTopic(@PathVariable Long id) {
+//        // Add logic for retrieving a topic
+//    }
+//
+//    @GetMapping
+//    public ResponseEntity<List<TopicDto>> getAllTopics() {
+//        // Add logic for retrieving all topics
+//    }
 }
 
