@@ -14,30 +14,40 @@ public class TopicController {
 
     @Autowired
     private TopicService topicService;
-//
-//    @PostMapping
-//    public ResponseEntity<TopicDto> createTopic(@RequestBody TopicDto topicDto) {
-//        // Add logic for creating a topic
-//    }
-//
-//    @PutMapping("/{id}")
-//    public ResponseEntity<TopicDto> updateTopic(@PathVariable Long id, @RequestBody TopicDto topicDto) {
-//        // Add logic for updating a topic
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteTopic(@PathVariable Long id) {
-//        // Add logic for deleting a topic
-//    }
-//
-//    @GetMapping("/{id}")
-//    public ResponseEntity<TopicDto> getTopic(@PathVariable Long id) {
-//        // Add logic for retrieving a topic
-//    }
-//
-//    @GetMapping
-//    public ResponseEntity<List<TopicDto>> getAllTopics() {
-//        // Add logic for retrieving all topics
-//    }
+
+    @PostMapping
+    public ResponseEntity<TopicDto> createTopic(@RequestBody TopicDto topicDto) {
+        // Add logic for creating a topic
+        TopicDto createdTopic = topicService.createTopic(topicDto);
+        return ResponseEntity.ok(createdTopic);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TopicDto> updateTopic(@PathVariable Long id, @RequestBody TopicDto topicDto) {
+        // Add logic for updating a topic
+        TopicDto updatedTopic = topicService.updateTopic(id, topicDto);
+        return ResponseEntity.ok(updatedTopic);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTopic(@PathVariable Long id) {
+        // Add logic for deleting a topic
+        topicService.deleteTopic(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TopicDto> getTopic(@PathVariable Long id) {
+        // Add logic for retrieving a topic
+        TopicDto topic = topicService.getTopic(id);
+        return ResponseEntity.ok(topic);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TopicDto>> getAllTopics() {
+        // Add logic for retrieving all topics
+        List<TopicDto> topics = topicService.getAllTopics();
+        return ResponseEntity.ok(topics);
+    }
 }
 
