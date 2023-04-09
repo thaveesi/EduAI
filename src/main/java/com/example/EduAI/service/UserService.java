@@ -26,6 +26,9 @@ public class UserService {
         user.setEmail(userRegistrationDto.getEmail());
         user.setPassword(passwordEncoder.encode(userRegistrationDto.getPassword()));
 
+        //temporary setpassword
+//        user.setPassword(userRegistrationDto.getPassword());
+
         // Save user to the database
         User savedUser = userRepository.save(user);
 
